@@ -25,13 +25,17 @@ You can use the following steps as a testing procedure
   * **Server**
     ```bash
     $ make build
-    $ bin/requsts-counter -config "{CONFIG_PATH.json}"
+    $ bin/requsts-counter-{OS}-{ARCH} -config "{CONFIG_PATH.json}"
     ```
     
-**`Params`**:
-   * CONFIG_PATH, a path to a json fil config e.g. `"config/main.json"`
-          
-  * **Multiple Requests**
+    **`Environment`**
+     * `OS` - the current operating system, e.g. (linux, darwin, ...etc.)
+     * `ARCH` - the current system architecture, e.g. (386, amd64)
+        
+    **`Params`**:
+     * `CONFIG_PATH` - a path to a json fil config e.g. `"config/main.json"`      
+
+* **Multiple Requests**
     ```bash
     # Sending one request per second.
     $ for i in {0..1000..1}
@@ -46,7 +50,7 @@ You can use the following steps as a testing procedure
 Not all items covered, just make one example.
     
 ```bash
-$ go test ./... -v --cover
+$ make unit
 ```
 
 ## Coding - __Structure & Design__
