@@ -1,0 +1,10 @@
+{
+  "server": {
+    "host": "localhost",
+    "port": ":8000",
+    "path": "/status"
+  },
+  "dispatcher": {
+    "backup": "data/recovery.json"
+  }
+}
